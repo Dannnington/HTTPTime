@@ -45,6 +45,7 @@ namespace HTTPTime
             Console.Write(TimeAPIResponse.BodyAsObject.abbreviation);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(" timezone.");
+            Console.ResetColor();
             return;
         }
     }
