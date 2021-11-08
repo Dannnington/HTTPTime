@@ -1,1 +1,4 @@
-HTTPTime
+# HTTPTime
+This is a CLI-based time and date tool, utilising an online API for time (instead of local libraries, I know). This is my first real project in C#, and I'm incredibly proud of it (even though it's a very simple tool). I've used C# and .NET before, but it's been so long since I've used it that I don't really remember much from my experiences with it.
+
+With that being said, do expect my code to be extremely messy. I haven't used C# in the past, although I plan to use it a lot more in the future. I'm not sure if this works on Windows, but I developed this tool on Linux with the official .NET SDKs, so chances are that it does also work on Windows. *It should be platform-agnostic anyway, so as long as a platform supports running .NET code, it should work?*
