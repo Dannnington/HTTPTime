@@ -14,10 +14,12 @@ namespace HTTPTime
 
         private static async Task Main(string[] args)
         {
-            FetchResponse TimeAPIResponse = (await Fetch.Get("https://worldtimeapi.org/api/ip"));
-            if (TimeAPIResponse.StatusCode != 200) {
+            FetchResponse TimeAPIResponse = (await Fetch.Get<Types.DateTimeAPIObject>("https://worldtimeapi.org/api/ip"));
+            FetchResponse IPInfoResponse = (await Fetch.Get<Types.IPInfoObject>("https://ipinfo.io"));
+               
+            if (TimeAPIResponse.StatusCode != 200 || IPInfoResponse.StatusCode != 200) {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("There was an error with the request to the Time API. Try again later, maybe?");
+                Console.WriteLine("There was an error with the request to the APIs used by HTTPTime. Try again later, maybe?");
                 return;
             }
 
@@ -44,7 +46,7 @@ namespace HTTPTime
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(TimeAPIResponse.BodyAsObject.abbreviation);
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(" timezone.");
+            Console.Write(" timezone.\n");
             Console.ResetColor();
             return;
         }

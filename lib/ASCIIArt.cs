@@ -1,8 +1,7 @@
 namespace ASCIIArt {
     public class TimeOfDay {
       public static string Morning() {
-        return @"
-    (  )   (   )  )
+        return @"    (  )   (   )  )
      ) (   )  (  (
      ( )  (    ) )
      _____________
@@ -17,8 +16,7 @@ namespace ASCIIArt {
       }
 
       public static string Noon() {
-          return @"
-          |
+          return @"          |
           |   .
    `.  *  |     .'
      `. ._|_* .'  .
@@ -34,8 +32,7 @@ namespace ASCIIArt {
       }
 
     public static string Evening() {
-      return @"
-         ___---___                    
+      return @"___---___                    
       .--         --.      
     ./   ()      .-. \.
    /   o    .   (   )  \

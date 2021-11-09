@@ -23,7 +23,7 @@ namespace HTTPFetch {
     public class Fetch {
         static readonly HttpClient HtClient = new HttpClient();
 
-        public static async Task<FetchResponse> Get(string url) {
+        public static async Task<FetchResponse> Get<GType>(string url) {
             var response = await HtClient.GetAsync(url);
 
             FetchResponse responseProperties = new FetchResponse();
@@ -39,7 +39,7 @@ namespace HTTPFetch {
             var token = Newtonsoft.Json.Linq.JToken.Parse(responseProperties.BodyAsString);
 
             if (responseProperties.ContentType.Contains("application/json")) {
-                responseProperties.BodyAsObject = Newtonsoft.Json.JsonConvert.DeserializeObject<Types.DateTimeAPIObject>(token.ToString());
+                responseProperties.BodyAsObject = Newtonsoft.Json.JsonConvert.DeserializeObject<GType>(token.ToString());
             } else {
                 responseProperties.BodyAsObject = new Object();
             };
